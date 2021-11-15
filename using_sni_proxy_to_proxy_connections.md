@@ -60,6 +60,6 @@ The last step is injecting the host override either in the campus DNS server or 
  
 This is essentially how 'SmartDNS' services work, which allow you to watch video services from other regions just by changing your DNS settings.
 
-Yes you can just use a browner extension set to just proxy that domain, but then that has to be setup on every browser used and proxy parameters passed to every curl command.
+Yes you can just use a browser extension set to just proxy that domain, but then that has to be setup on every browser used and proxy parameters passed to every curl command.
  
-Solution will always ensure privacy as the TLS termination still takes place on the client as well, instead of doing a reverse proxy-proxy with Nginx/HAProxy there are some modules you can use that allow upstream connections via socks or http proxies. 
+Solution will always ensure 'some-level' of privacy as the TLS termination still takes place on the client, instead of doing a reverse proxy-proxy with Nginx/HAProxy there are some modules you can use that allow upstream connections via socks or http proxies. 
