@@ -83,10 +83,9 @@ for line in output.decode('utf-8').split('\n'):
         prefix = line.strip().split(' ')[-1]
         if prefix == "NN" or not prefix: continue
 
-		if '-6' in BGPQ4_CMD:
-			minimal_subnet = [ipaddress.ip_network(prefix)]
-		else:
-			minimal_subnet = ipaddress.ip_network(prefix).subnets(new_prefix=24)
+	minimal_subnet = ipaddress.ip_network(prefix).subnets(new_prefix=24)
+	if '-6' in BGPQ4_CMD:
+		minimal_subnet = [ipaddress.ip_network(prefix)]
 
         for subnet in minimal_subnet:
                 if subnet not in ip_list: ip_list.append(str(next(subnet.hosts())))
