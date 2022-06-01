@@ -19,7 +19,7 @@ Basically what I did was setup 4 different master PowerDNS servers in core locat
 
 Used ```dig +trace``` to determine that.
 
-Right, so eachPowerDNS all setup the identically and independently they aren't aware of each other.
+Right, so each PowerDNS are all setup the identically and independently they aren't aware of each other.
 
 But every authoritative server runs a MariaDB instance, that is synchronised leveraging master-to-master replication running in a Galera Cluster!
 
