@@ -46,9 +46,11 @@ Additionally in case of Anycast announcement failures the secondary name server,
 
 ------------------------
 
-Anyway the last problem I had was now I wanted to comply with Forward-confirmed reverse DNS, the real reason I got into this.
+Anyway the last problem I had was now I wanted to comply with Forward-confirmed reverse DNS, the real reason I got into this and yes I patched the DCIM software to verify before posting to PowerDNS haha.
 
-There is really no easy way to do this so I just wrote a script, attached below it's quite simple it checks every PTR in the PowerDNS database has a valid A or AAAA record.
+There is really no easy way to do this for things that already exist...
+
+So I just wrote a script, attached below it's quite simple it checks every PTR in the PowerDNS database has a valid A or AAAA record, if not it deletes it.
 
 ```python
 import mysql.connector, dns.resolver, dns.reversename
@@ -93,8 +95,8 @@ for x in db_cursor.fetchall():
 			if y.to_text() == ip:
 				valid = True
 				break
-		except:
-			pass
+	except:
+		pass
 
 	if not valid:
 		print(ptr, ip, domain)
