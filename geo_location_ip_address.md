@@ -97,17 +97,15 @@ for ip in ip_list:
 
         ipblock_whois = IPWhois(ip).lookup_whois()
 
-        city_set = False
         whois_city = ipblock_whois['nets'][0]['description']
         if whois_city is None: whois_city = "-"
         maxmind_city = maxmind_data.city.name
         if maxmind_city is None: maxmind_city = "--"
-        if whois_city.lower().endswith(maxmind_city.lower()): city_set = True
+        city_set = (whois_city.lower().endswith(maxmind_city.lower()))
 
-        country_set = False
         whois_country = ipblock_whois['nets'][0]['country']
         maxmind_country = maxmind_data.country.iso_code
-        if whois_country == maxmind_country: country_set = True
+        country_set = (whois_country == maxmind_country)
 
         if country_set and city_set: continue
 
