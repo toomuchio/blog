@@ -5,12 +5,13 @@ A colleague came to me with an odd problem, a free service he uses was banning h
 There's no option to pay and they've basically just said to him "Use a VPN when that happens", which he's been doing. But it's cumbersome turning on and off the VPN.
  
 After hearing him complaining about it a few times, I decided to solve this problem for him properly.
- 
+
+**Disclaimer these are not 'production ready' scripts, this is just what I ran**
 ```
 git clone https://github.com/dlundquist/sniproxy.git
 cd sniproxy/
 ./autogen.sh && ./configure && dpkg-buildpackage
-dpkg -i ../sniproxy_0.*_amd64.deb```
+dpkg -i ../sniproxy_0.*_amd64.deb
 
 service sniproxy stop
 
