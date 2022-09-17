@@ -1,3 +1,5 @@
+## Defeating Captive Portals on a Headless Machine
+
 Another day random issue.
 
 
@@ -28,6 +30,7 @@ pip3 install selenium
 
 Job done.
 
+------------------
 
 ```python
 from selenium import webdriver
