@@ -28,7 +28,7 @@ apt-get install chromium-driver
 pip3 install selenium
 
 
-Job done.
+Job done, this scripts sits as a systemd process that constantly runs, as after x hours reauthorization is required.
 
 ------------------
 
